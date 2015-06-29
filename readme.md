@@ -6,13 +6,12 @@ A simple wrapper of google sign in for ios, lets' code less in AppDelegate.
 - configure google sign in properly
 1. pod install Google/SignIn
 2. configure GoogleService-Info.plist, it should be something like below
-<p align="center" >
-  <img src="...">
-</p>
+  ![Image of info-plist]
+  (https://raw.githubusercontent.com/calvinchankf/GoogeSignInHelper/master/info-plist.png)
 3. add url scheme, it shouldd be something like this
-<p align="center" >
-  <img src="...">
-</p>
+  ![Image of url-scheme]
+  (https://raw.githubusercontent.com/calvinchankf/GoogeSignInHelper/master/url_scheme.png)
+  
 
 # How to use
 - Adopt GoogeSignInHelperDelegate
