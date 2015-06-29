@@ -1,6 +1,6 @@
 # Intro
 
-A simple wrapper of google sign in for ios, lets' code less in AppDelegate.
+A simple wrapper of google sign in for ios, let's code less in AppDelegate.
 
 # Prerequisite
 - configure google sign in properly
@@ -14,7 +14,7 @@ A simple wrapper of google sign in for ios, lets' code less in AppDelegate.
   
 
 # How to use
-- Adopt GoogeSignInHelperDelegate
+- Import GoogeSignInHelper.h and .m to a project and adopt GoogeSignInHelperDelegate
 ```
 @interface AppDelegate ()<GoogeSignInHelperDelegate>
 ```
