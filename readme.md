@@ -24,7 +24,8 @@ A simple wrapper of google sign in for ios, let's code less in AppDelegate.
   
   //...
 
-  [[GoogeSignInHelper currentHelper] configure:self];
+  // use youtube as an example for a scope
+  [[GoogeSignInHelper currentHelper] configure:@[@"https://www.googleapis.com/auth/youtube"] with:self];
   
   return YES;
 }

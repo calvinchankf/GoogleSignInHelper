@@ -1,6 +1,6 @@
 //
 //  GoogeSignInHelper.m
-//  Musik
+//  GoogeSignInHelper
 //
 //  Created by calvin on 6/6/2015.
 //  Copyright (c) 2015年 me.calvinchankf. All rights reserved.
@@ -26,7 +26,7 @@ static GoogeSignInHelper *_googeSignInHelper = nil;
                                     annotation:annotation];
 }
 
-- (void)configure:(id<GoogeSignInHelperDelegate>)delegate {
+- (void)configure:(NSArray *)scopes with:(id<GoogeSignInHelperDelegate>)delegate {
   
   self.delegate = delegate;
   
@@ -41,7 +41,7 @@ static GoogeSignInHelper *_googeSignInHelper = nil;
   [GIDSignIn sharedInstance].delegate = self;
   
   // Uncomment to automatically sign in the user.
-  [[GIDSignIn sharedInstance] setScopes:@[@"https://www.googleapis.com/auth/youtube"]];
+  [[GIDSignIn sharedInstance] setScopes:scopes];
   [[GIDSignIn sharedInstance] signInSilently];
 }
 

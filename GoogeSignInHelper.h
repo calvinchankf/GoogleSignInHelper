@@ -1,6 +1,6 @@
 //
 //  GoogeSignInHelper.h
-//  Musik
+//  GoogeSignInHelper
 //
 //  Created by calvin on 6/6/2015.
 //  Copyright (c) 2015年 me.calvinchankf. All rights reserved.
@@ -26,6 +26,6 @@
 + (instancetype)currentHelper;
 + (BOOL)handleURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
-- (void)configure:(id<GoogeSignInHelperDelegate>)delegate;
+- (void)configure:(NSArray *)scopes with:(id<GoogeSignInHelperDelegate>)delegate;
 
 @end
