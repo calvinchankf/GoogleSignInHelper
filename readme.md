@@ -7,16 +7,16 @@ A simple wrapper of google sign in for ios, let's code less in AppDelegate.
 1. pod install Google/SignIn
 2. configure GoogleService-Info.plist, it should be something like below
   ![Image of info-plist]
-  (https://raw.githubusercontent.com/calvinchankf/GoogeSignInHelper/master/info-plist.png)
+  (https://raw.githubusercontent.com/calvinchankf/GoogleSignInHelper/master/info-plist.png)
 3. add url scheme, it shouldd be something like this
   ![Image of url-scheme]
-  (https://raw.githubusercontent.com/calvinchankf/GoogeSignInHelper/master/url_scheme.png)
+  (https://raw.githubusercontent.com/calvinchankf/GoogleSignInHelper/master/url_scheme.png)
   
 
 # How to use
-- Import GoogeSignInHelper.h and .m to a project and adopt GoogeSignInHelperDelegate
+- Import GoogleSignInHelper.h and .m to a project and adopt GoogleSignInHelperDelegate
 ```
-@interface AppDelegate ()<GoogeSignInHelperDelegate>
+@interface AppDelegate ()<GoogleSignInHelperDelegate>
 ```
 - Configure the helper in didFinishLaunchingWithOptions
 ```
@@ -25,7 +25,7 @@ A simple wrapper of google sign in for ios, let's code less in AppDelegate.
   //...
 
   // use youtube as an example for a scope
-  [[GoogeSignInHelper currentHelper] configure:@[@"https://www.googleapis.com/auth/youtube"] with:self];
+  [[GoogleSignInHelper currentHelper] configure:@[@"https://www.googleapis.com/auth/youtube"] with:self];
   
   return YES;
 }
@@ -33,12 +33,12 @@ A simple wrapper of google sign in for ios, let's code less in AppDelegate.
 - Handle open url
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  return [GoogeSignInHelper handleURL:url sourceApplication:sourceApplication annotation:annotation];
+  return [GoogleSignInHelper handleURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 ```
 - Implement delegate methods in AppDelegate
 ```
-#pragma mark - GoogeSignInHelperDelegate
+#pragma mark - GoogleSignInHelperDelegate
 
 - (void)googleSignInAuth {
   NSLog(@"googleSignInAuth");
