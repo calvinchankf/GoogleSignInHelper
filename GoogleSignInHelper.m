@@ -1,23 +1,23 @@
 //
-//  GoogeSignInHelper.m
-//  GoogeSignInHelper
+//  GoogleSignInHelper.m
+//  GoogleSignInHelper
 //
 //  Created by calvin on 6/6/2015.
 //  Copyright (c) 2015年 me.calvinchankf. All rights reserved.
 //
 
-#import "GoogeSignInHelper.h"
+#import "GoogleSignInHelper.h"
 #import "AppDelegate.h"
 
-@implementation GoogeSignInHelper
+@implementation GoogleSignInHelper
 
-static GoogeSignInHelper *_googeSignInHelper = nil;
+static GoogleSignInHelper *_googleSignInHelper = nil;
 
 + (instancetype)currentHelper {
-  if (!_googeSignInHelper) {
-    _googeSignInHelper = [[GoogeSignInHelper alloc] init];
+  if (!_googleSignInHelper) {
+    _googleSignInHelper = [[GoogleSignInHelper alloc] init];
   }
-  return _googeSignInHelper;
+  return _googleSignInHelper;
 }
 
 + (BOOL)handleURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -26,7 +26,7 @@ static GoogeSignInHelper *_googeSignInHelper = nil;
                                     annotation:annotation];
 }
 
-- (void)configure:(NSArray *)scopes with:(id<GoogeSignInHelperDelegate>)delegate {
+- (void)configure:(NSArray *)scopes with:(id<GoogleSignInHelperDelegate>)delegate {
   
   self.delegate = delegate;
   
@@ -53,11 +53,11 @@ static GoogeSignInHelper *_googeSignInHelper = nil;
   NSLog(@"accessToken=%@", user.authentication.accessToken);
   
   if ([GIDSignIn sharedInstance].currentUser.authentication == nil) {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(GoogeSignInHelperDelegate)]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(GoogleSignInHelperDelegate)]) {
       [self.delegate googleSignInUnAuth];
     }
   } else {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(GoogeSignInHelperDelegate)]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(GoogleSignInHelperDelegate)]) {
       [self.delegate googleSignInAuth];
     }
   }
