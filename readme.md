@@ -1,3 +1,6 @@
+
+## Thank you guys so much for all your support. The project has been discontinued. Thank you.
+
 # Intro
 
 A simple wrapper of google sign in for ios, let's code less in AppDelegate.
